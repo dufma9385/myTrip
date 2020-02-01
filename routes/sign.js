@@ -4,9 +4,9 @@ const router = express.Router();
 
 router.post('/', (req, res)=>{
     
-    const email = req.body.contact_email;
-    const name = req.body.contact_name;
-    const phone = req.body.contact_phone;
+    const email = req.body.user_email;
+    const name = req.body.user_name;
+    const phone = req.body.user_phone;
 
     var sql = `INSERT INTO user (email, name, phone) VALUES ('${email}', '${name}', ${phone})`;
 

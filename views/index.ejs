@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Trip spot Travel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>myTrip</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -296,15 +296,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <section class="gallery py-5" id="gallery">
         <div class="container py-md-5">
             <div class="header mb-3 mb-sm-5 text-center">
-               <h3 class="heading text-center mb-3 mb-sm-5">Tour Gallery</h3>
+               <h3 class="heading text-center mb-3 mb-sm-5">Community</h3>
                 <div class="row news-grids text-center">
+                    <% for(let i=0; i<2; i++){ %>
                     <div class="col-md-4 gal-img">
-                        <a href="#gal1"><img src="images/g1.jpg" alt="news image" class="img-fluid"><span> HoneyMoon</span></a>
-                        <a href="#gal2"><img src="images/g2.jpg" alt="news image" class="img-fluid"><span>Family</span></a>
-
+                        <a href="#gal<% i %>"><img src="images/g<% i %>.jpg" alt="news image" class="img-fluid"><span> <%=
+                            result[i].title %></span></a>
+                        <!-- <a href="#gal<%= i %>"><img src="images/g<%= i %>.jpg" alt="news image" class="img-fluid"><span><%=
+                            result[i].title %></span></a> -->
+                    <% } %>
                     </div>
 
-                    <div class="col-md-4 gal-img">
+                    <!-- <div class="col-md-4 gal-img">
                         <a href="#gal3"><img src="images/g3.jpg" alt="news image" class="img-fluid"><span>Holidays</span></a>
 
                         <a href="#gal4"><img src="images/g4.jpg" alt="news image" class="img-fluid"><span>Adventure</span></a>
@@ -312,7 +315,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-4 gal-img">
                         <a href="#gal5"><img src="images/g5.jpg" alt="news image" class="img-fluid"><span>Luxury</span></a>
                         <a href="#gal6"><img src="images/g6.jpg" alt="news image" class="img-fluid"><span>Romantic</span></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- popup-->

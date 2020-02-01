@@ -1,13 +1,5 @@
 $(document).ready(function(){
-    $('#sign_btn').click(function(){
-        const user_email = $('#user_email').val();
-        const user_name = $('#user_email').val();
-        const user_phone = $('#user_phone').val();
-        const send_param = {user_email, user_name, user_phone};
-        $.post('sign', send_param, function(returnData){
-            alert(returnData.message);
-        });
-    });
+    
     $('#sign').click(function(){
         let sign_html_content="<div class='col-lg-6 col-md-6 contact-left-form'>";
         sign_html_content +="<form>";
@@ -26,6 +18,16 @@ $(document).ready(function(){
         sign_html_content +="</div>"
         $('#footer').html(sign_html_content); 
 
+    });
+    $('#sign_btn').click(function(){
+        alert();
+        // const user_email = $('#user_email').val();
+        // const user_name = $('#user_name').val();
+        // const user_phone = $('#user_phone').val();
+        // const send_param = {user_email, user_name, user_phone};
+        // $.post('sign', send_param, function(returnData){
+        //     alert(returnData.message);
+        // });
     });
 
     $('#login_bt1').click(function(){
