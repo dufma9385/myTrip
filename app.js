@@ -1,4 +1,4 @@
-const contactRouter = require('./routes/board');
+const contactRouter = require('./routes/contact');
 const boardRouter = require('./routes/board');
 //const loginRouter = require('./routes/login');
  
