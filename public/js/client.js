@@ -24,7 +24,7 @@ $(document).ready(function(){
         sign_html_content +="<input type='' class='form-control' id='user_phone' placeholder='Enter your name'>";
         sign_html_content +="<input type='button' id='sign_btn' class='btn btn-block sent-butnn' value='Send'></form>";
         sign_html_content +="</div>"
-        $('#footer').html(sign_html_content);
+        $('#footer').html(sign_html_content); 
 
     });
 
