@@ -4,7 +4,7 @@ $(document).ready(function(){
         const user_name = $('#user_email').val();
         const user_phone = $('#user_phone').val();
         const send_param = {user_email, user_name, user_phone};
-        $.post('contact', send_param, function(returnData){
+        $.post('sign', send_param, function(returnData){
             alert(returnData.message);
         });
     });
@@ -32,7 +32,7 @@ $(document).ready(function(){
         //alert();
         const contact_email=$('#login_email').val();
         const send_param={contact_email};
-        $.post('contact', send_param,function(returnData){
+        $.post('login', send_param,function(returnData){
             alert(returnData.message);
         });
     });

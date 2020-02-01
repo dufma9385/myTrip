@@ -27,6 +27,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //google fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/client.js"></script>
+    <style type="text/css">
+        @import url("css/bootstrap.css");
+        @import url("css/style.css");
+        @import url("css/font-awesome.min.css");
+        @import url("css/css_slider.css");
+    </style>
 </head>
 <body>
 
@@ -53,9 +59,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class=""><a href="#testimonials">Testimonials</a></li>
 				<li class=""><a href="#contact">Upload</a></li>
             </ul>
-            <div id="login_div">
-                <button id="login_btn" class="btn btn-warning">login</button>
-            </div>
+            <% if(flag==0){ %>
+                <div id="login_div">
+                    <button id="login_btn" class="btn btn-warning">login</button>
+                </div>
+            <% }else{ %>
+                <div>
+                    <button id="logout_btn" class="btn btn-warning">logout</button>
+                </div>
+            <% } %>
 		</nav>
 		<!-- //nav -->
 	</div>
