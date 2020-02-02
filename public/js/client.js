@@ -14,33 +14,33 @@ $(document).ready(function(){
         sign_html_content +="<div class='form-group'>";
         sign_html_content +="<label for='phone'>Phone:</label>";
         sign_html_content +="<input type='' class='form-control' id='user_phone' placeholder='Enter your name'>";
-        sign_html_content +="<input type='button' id='sign_btn' class='btn btn-block sent-butnn' value='Send'></form>";
+        sign_html_content +="<input type='button' id='send_btn' class='btn btn-block sent-butnn' value='Send'></form>";
         sign_html_content +="</div>"
         $('#footer').html(sign_html_content); 
 
     });
-    $('#sign_btn').click(function(){
-        alert();
-        // const user_email = $('#user_email').val();
-        // const user_name = $('#user_name').val();
-        // const user_phone = $('#user_phone').val();
-        // const send_param = {user_email, user_name, user_phone};
-        // $.post('sign', send_param, function(returnData){
-        //     alert(returnData.message);
-        // });
+    $(document).on('click','#send_btn', function(){
+        //alert();
+        const user_email = $('#user_email').val();
+        const user_name = $('#user_name').val();
+        const user_phone = $('#user_phone').val();
+        const send_param = {user_email, user_name, user_phone};
+        $.post('/sign', send_param, function(returnData){
+            alert(returnData.message);
+        });
     });
 
     $('#login_bt1').click(function(){
         //alert();
-        const contact_email=$('#login_email').val();
-        const send_param={contact_email};
-        $.post('login', send_param,function(returnData){
+        const login_email=$('#login_email').val();
+        const send_param={login_email};
+        $.post('/login', send_param, function(returnData){
             alert(returnData.message);
         });
     });
     
     $('#login_btn').click(function(){
-        window.open("/login.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=650,height=650");
+        window.open("/login/login_p", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=650,height=650");
     });
 
     $('#board_btn').click(function(){

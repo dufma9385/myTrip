@@ -2,25 +2,32 @@ const con = require('./mysql_con');
 const express = require('express');
 const router = express.Router();
 
-router.post('/', (req, res)=>{
-    
-    const email = req.body.contact_email;
-    var sql = `SELECT * FROM user WHERE email="${email}"`;
+router.get('/login_p', (req, res)=>{
+   //쿼리는 질의문이라고 한다. 무슨 쿼리 랭귀지 약자 쿼리를 쓰겠다는 거다 mysql연결해서 쓰겠다는것
+    // con.query(sql, (err, result, field) =>{ 
+    //     console.log(field);
+        res.render('login',{title:"글쓰기 화면"});
+    // });
+});
 
-    con.query(sql, function(err, result){
-        if(err){
-            console.log("login fail");
-            res.json({message:"login fail"});
-        }else{
-            if(result[0]){
-                const name = result[0].name;
-                console.log("login success");
-                res.json({message:`${name}님 안녕하세요`});
+router.post('/', (req, res)=>{
+    const sql= `SELECT * FROM  user where email='${req.body.login_email}'`;
+        console.log(sql);
+        con.query(sql, function (err, result, fields){
+            if(err){
+                console.log(err);
             }else{
-                console.log("login fail");
-                res.json({message:"이메일주소를 확인하세요"})
+                console.log(result.length);
+                if(result.length > 0){
+                    req.session.login_email = req.body.login_email;
+                    message="Login Ok";
+                    console.log(message);
+                }else{
+                    message="Login Fail";
+                    console.log(message);
+                }
+                res.json({message:message});
             }
-        }
-    });
+        });
 });
 module.exports = router;
