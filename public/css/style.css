@@ -161,6 +161,9 @@ nav {
 	padding: 0;
 }
 
+#login_div {
+    float: right;
+}
 
 #logo a {
 	float: left;
