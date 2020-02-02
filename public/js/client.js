@@ -36,9 +36,20 @@ $(document).ready(function(){
         const send_param={login_email};
         $.post('/login', send_param, function(returnData){
             alert(returnData.message);
+            window.opener.parent.location.reload();
+            window.close();
+
         });
+
     });
     
+    $('#logout_btn').click(function(){
+        $.post('logout', {}, function(resultData){
+            alert(resultData.message);
+            location.reload();
+        })
+    });
+
     $('#login_btn').click(function(){
         window.open("/login/login_p", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=650,height=650");
     });

@@ -1,3 +1,4 @@
+const logoutRouter = require('./routes/logout');
 const loginRouter = require('./routes/login');
 const boardRouter = require('./routes/board');
 const indexRouter = require('./routes/index');
@@ -24,6 +25,7 @@ app.use(session({
     }
 }));
 
+app.use('/logout', logoutRouter);
 app.use('/sign', signRouter);
 app.use('/board',boardRouter);
 app.use('/login',loginRouter);
