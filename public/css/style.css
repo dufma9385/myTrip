@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 html,
+
 body {
     margin: 0;
     font-size: 100%;
@@ -513,7 +514,7 @@ h4.b-w3ltxt {
     background: #f1f1f1;
     letter-spacing: 0.5px;
     padding: 14px 20px;
-    width: 49%;
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
 }
@@ -538,15 +539,15 @@ h4.b-w3ltxt {
     background: #dc3545;
 }
 .padding {
-    padding: 2.5em;
-   background-color:rgba(1, 17, 68, 0.17);
+    padding: 5.0em;
+   /* background-color:rgba(1, 17, 68, 0.17); */
 }
-.padding h5 {
+.padding h1 {
     font-weight: 700;
     font-style: normal;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
-    font-size: 20px;
+    /* font-size: 20px; */
     line-height: 1.2;
     text-align: center;
 }
@@ -1629,3 +1630,5 @@ h3.heading {
 }
 }
 /*-- //Responsive design --*/
+
+
