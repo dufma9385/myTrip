@@ -64,6 +64,10 @@ $(document).ready(function(){
         const send_param={board_title, board_content, board_nation};
         $.post('board', send_param,function(returnData){
             alert(returnData.message);
+            location.reload();
+            board_title.val("");
+            board_content.val("");
+            board_nation.val("");
         });
     });
 

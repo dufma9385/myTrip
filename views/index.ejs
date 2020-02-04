@@ -258,20 +258,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="header mb-3 mb-sm-5 text-center">
                <h3 class="heading text-center mb-3 mb-sm-5">Community</h3>
                 <div class="row news-grids text-center">
-                    <% for(let i=0; i<result.length; i++){ %>
+                    <% for(let i=0; i<result.length; i++){
+                        %>
                     <div class="col-md-4 gal-img">
                         <div>
                             <div>
-                                <a href="#<% i%>"><span><%= result[i].title %></span></a>
+                                <a href="#<%= result[i].title%>"><span><%= result[i].title %></span></a>
                             </div>
                             <br>
-                            <div>
-                                <span><%= result[i].content %></span>
-                            </div>
                         </div>
                         
                     </div>
-                            
                     <% } %>
                 </div>
 
@@ -288,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- popup-->
             <% for(let i=0; i<result.length; i++){ %>
-            <div id="<% i %>" class="pop-overlay animate">
+            <div id="<%= result[i].title %>" class="pop-overlay animate">
                 <div class="popup">
                     <p class="mt-4"><%= result[i].content %></p>
                     <a class="close" href="#gallery">&times;</a>
