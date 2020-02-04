@@ -16,7 +16,7 @@ router.post('/',(req, res)=>{
             }
             console.log(result);
             res.json({message:str});
-           // res.render('index',{result:str});
+            res.render('index',{result:str});
         }
     });
 });

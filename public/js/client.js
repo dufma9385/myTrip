@@ -8,7 +8,7 @@ $(document).ready(function(){
             alert(returnData.message);
             location.reload();
 
-            //let board_search_view = `<div>${ser.message}</div>`;
+            let board_search_view = `<div>${ser.message}</div>`;
             $('#search_view').html(returnData.message);
         })
     });
