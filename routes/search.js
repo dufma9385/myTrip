@@ -12,11 +12,11 @@ router.post('/',(req, res)=>{
         }else{
             let str="";
             for(let i=0; i<result.length; i++){
-                str+=result[i].title;
+                str+=result[i].title + ", ";
             }
             console.log(result);
             res.json({message:str});
-            res.render('index',{search_result:search_result});
+           // res.render('index',{result:str});
         }
     });
 });

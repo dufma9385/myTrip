@@ -7,6 +7,9 @@ $(document).ready(function(){
         $.post('/search', send_param, function(returnData){
             alert(returnData.message);
             location.reload();
+
+            //let board_search_view = `<div>${ser.message}</div>`;
+            $('#search_view').html(returnData.message);
         })
     });
     
