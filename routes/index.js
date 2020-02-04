@@ -15,7 +15,7 @@ router.get('/', (req, res)=>{
         if(err){
             console.log('불러오기 실패');
         }else{
-            console.log(result);
+            //console.log(result);
             res.render('index',{flag:login_email, result:result});   
                       
         }

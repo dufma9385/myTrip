@@ -1,8 +1,10 @@
+const searchRouter = require('./routes/search');
 const logoutRouter = require('./routes/logout');
 const loginRouter = require('./routes/login');
 const boardRouter = require('./routes/board');
 const indexRouter = require('./routes/index');
 const signRouter = require('./routes/sign');
+
  
 const express = require('express');
 const session = require('express-session');
@@ -25,6 +27,7 @@ app.use(session({
     }
 }));
 
+app.use('/search', searchRouter);
 app.use('/logout', logoutRouter);
 app.use('/sign', signRouter);
 app.use('/board',boardRouter);

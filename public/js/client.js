@@ -1,4 +1,14 @@
 $(document).ready(function(){
+
+    $('#search_btn').click(function(){
+        const search = $('#search_val').val();
+        //alert(search);
+        const send_param = {search};
+        $.post('/search', send_param, function(returnData){
+            alert(returnData.message);
+            location.reload();
+        })
+    });
     
     $('#sign').click(function(){
         let sign_html_content="<div class='col-lg-6 col-md-6 contact-left-form'>";
@@ -13,7 +23,7 @@ $(document).ready(function(){
         sign_html_content +="</div>";
         sign_html_content +="<div class='form-group'>";
         sign_html_content +="<label for='phone'>Phone:</label>";
-        sign_html_content +="<input type='' class='form-control' id='user_phone' placeholder='Enter your name'>";
+        sign_html_content +="<input type='' class='form-control' id='user_phone' placeholder='Enter your phone Number'>";
         sign_html_content +="<input type='button' id='send_btn' class='btn btn-block sent-butnn' value='Send'></form>";
         sign_html_content +="</div>"
         $('#footer').html(sign_html_content); 
@@ -27,6 +37,8 @@ $(document).ready(function(){
         const send_param = {user_email, user_name, user_phone};
         $.post('/sign', send_param, function(returnData){
             alert(returnData.message);
+            location.reload();
+            sign_html_content.hide();
         });
     });
 
@@ -51,7 +63,7 @@ $(document).ready(function(){
     });
 
     $('#login_btn').click(function(){
-        window.open("/login/login_p", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=650,height=650");
+        window.open("/login/login_p", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=650,height=650");
     });
 
     $('#board_btn').click(function(){
