@@ -58,9 +58,10 @@ $(document).ready(function(){
         //alert();
         const board_title=$('#board_title').val();
         const board_content=$('#board_content').val();
+        const board_nation=$('#board_nation').val();
 
         //alert(contact_name+":"+contact_email+":"+contact_phone+":"+contact_message);
-        const send_param={board_title, board_content};
+        const send_param={board_title, board_content, board_nation};
         $.post('board', send_param,function(returnData){
             alert(returnData.message);
         });

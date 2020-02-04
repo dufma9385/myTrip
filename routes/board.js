@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/', (req, res)=>{
     console.log(req.session.email);
     if(req.session.login_email){
-    const sql = `INSERT INTO board (title, content) VALUES ('${req.body.board_title}', '${req.body.board_content}')`;
+    const sql = `INSERT INTO board (title, content, nation) VALUES ('${req.body.board_title}', '${req.body.board_content}', '${req.body.board_nation}')`;
         con.query(sql,(err, result)=>{
             if(err){
                 console.log(err);
